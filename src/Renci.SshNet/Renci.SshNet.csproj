@@ -57,6 +57,8 @@
     <Compile Include="Abstractions\ReflectionAbstraction.cs" />
     <Compile Include="Abstractions\SocketAbstraction.cs" />
     <Compile Include="Abstractions\ThreadAbstraction.cs" />
+    <Compile Include="AgentAuthenticationMethod.cs" />
+    <Compile Include="AgentConnectionInfo.cs" />
     <Compile Include="AuthenticationMethod.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -147,9 +149,11 @@
     <Compile Include="HashInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IAgentProtocol.cs" />
     <Compile Include="IAuthenticationMethod.cs" />
     <Compile Include="IClientAuthentication.cs" />
     <Compile Include="IConnectionInfo.cs" />
+    <Compile Include="IdentityReference.cs" />
     <Compile Include="IForwardedPort.cs" />
     <Compile Include="IServiceFactory.cs" />
     <Compile Include="IServiceFactory.NET.cs" />
@@ -160,6 +164,9 @@
     <Compile Include="Messages\Transport\KeyExchangeEcdhInitMessage.cs" />
     <Compile Include="Messages\Transport\KeyExchangeEcdhReplyMessage.cs" />
     <Compile Include="Netconf\INetConfSession.cs" />
+    <Compile Include="Pageant\COPYDATASTRUCT.cs" />
+    <Compile Include="Pageant\NativeMethods.cs" />
+    <Compile Include="Pageant\PageantProtocol.cs" />
     <Compile Include="Security\Cryptography\HMACMD5.cs" />
     <Compile Include="Security\Cryptography\HMACSHA1.cs" />
     <Compile Include="Security\Cryptography\HMACSHA256.cs" />
