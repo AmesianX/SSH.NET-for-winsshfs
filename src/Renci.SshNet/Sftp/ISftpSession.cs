@@ -95,6 +95,10 @@ namespace Renci.SshNet.Sftp
         /// <returns>data array; null if EOF</returns>
         byte[] RequestRead(byte[] handle, ulong offset, uint length);
 
+        KeyValuePair<string, SftpFileAttributes>[] RequestReadLink(string path, bool nullOnError = false);
+
+        bool RequestReadAsync(byte[] handle, UInt64 offset, UInt32 length, Action<SftpDataResponse> readCompleted);
+
         /// <summary>
         /// Performs SSH_FXP_READDIR request
         /// </summary>
