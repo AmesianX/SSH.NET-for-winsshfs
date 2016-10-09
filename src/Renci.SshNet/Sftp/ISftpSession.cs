@@ -97,6 +97,8 @@ namespace Renci.SshNet.Sftp
 
         KeyValuePair<string, SftpFileAttributes>[] RequestReadLink(string path, bool nullOnError = false);
 
+        KeyValuePair<string, SftpFileAttributes> GetSymlinkRealTarget(string symlinkPath);
+
         bool RequestReadAsync(byte[] handle, UInt64 offset, UInt32 length, Action<SftpDataResponse> readCompleted);
 
         /// <summary>

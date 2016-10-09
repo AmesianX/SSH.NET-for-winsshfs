@@ -259,16 +259,18 @@ namespace Renci.SshNet
             if (this._sftpSession == null)
                 throw new SshConnectionException("Client not connected.");
 
-            var symTargetPaths = this._sftpSession.RequestReadLink(path, true);
+            try
+            {
+                KeyValuePair<string, SftpFileAttributes> symTarget = this._sftpSession.GetSymlinkRealTarget(path);
 
-            if (symTargetPaths == null)
+                SftpFileAttributes regularTargetAttributes = this.GetAttributes(symTarget.Key);
+               
+                return new SftpFile(this._sftpSession, symTarget.Key, regularTargetAttributes);
+            }
+            catch (SftpPathNotFoundException)
             {
                 throw new SftpPathNotFoundException("No valid symlink target");
             }
-
-            SftpFileAttributes symTargetAttributes = GetAttributes(symTargetPaths[0].Key);
-
-            return new SftpFile(this._sftpSession, symTargetPaths[0].Key, symTargetAttributes);
         }
 
         #endregion Constructors
