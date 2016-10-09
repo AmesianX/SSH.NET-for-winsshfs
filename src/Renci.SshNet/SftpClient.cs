@@ -1760,7 +1760,7 @@ namespace Renci.SshNet
         /// <exception cref="SshConnectionException">Client is not connected.</exception>
         /// <exception cref="SftpPathNotFoundException"><paramref name="path"/> was not found on the remote host.</exception>
         /// <exception cref="ObjectDisposedException">The method was called after the client was disposed.</exception>
-        public SftpFileAttributes GetAttributes(string path)
+        virtual public SftpFileAttributes GetAttributes(string path)
         {
             CheckDisposed();
 

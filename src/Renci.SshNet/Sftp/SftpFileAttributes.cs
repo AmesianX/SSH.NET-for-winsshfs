@@ -184,6 +184,17 @@ namespace Renci.SshNet.Sftp
         public bool IsDirectory { get; private set; }
 
         /// <summary>
+        ///   
+        /// 
+        /// </summary>
+        public bool IsSymbolicLinkToDirectory { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string SymbolicLinkTarget { get; set; }
+
+        /// <summary>
         /// Gets a value indicating whether file represents a character device.
         /// </summary>
         /// <value>
